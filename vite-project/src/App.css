@@ -1,0 +1,50 @@
+.app-layout {
+    position: relative;
+    width: 100%;
+}
+
+.controls {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 100;
+    display: flex;
+    gap: 8px;
+}
+
+
+.building-btn {
+    padding: 8px 16px;
+    background-color: #9ca3af;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.building-btn.active {
+    background-color: #3b82f6;
+}
+
+.building-btn:hover {
+    background-color: #6b7280;
+}
+
+.building-btn.active:hover {
+    background-color: #2563eb;
+}
+
+.floor-btn {
+    width: 40px;
+    height: 40px;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+
+}
+
+.floor-btn:hover {
+    background-color: #2563eb;
+}
