@@ -1,5 +1,3 @@
-
-
 type FloorButtonProps = {
     buildingId: number
     onChangeFloor: (floor: number) => void

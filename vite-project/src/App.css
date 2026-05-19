@@ -1,6 +1,11 @@
+body {
+    margin: 0px;
+}
+
 .app-layout {
     position: relative;
     width: 100%;
+    min-height: 100vh;
 }
 
 .controls {
@@ -47,4 +52,30 @@
 
 .floor-btn:hover {
     background-color: #2563eb;
+}
+
+.center-header {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 200;
+    background: rgba(255, 255, 255, 0.315);
+    backdrop-filter: blur(8px);
+    padding: 10px 24px;
+    border-radius: 10px;
+    text-align: center;
+    color: black;
+    font-family: system-ui, -apple-system, sans-serif;
+    pointer-events: none;
+}
+
+.building-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.floor-name {
+    font-size: 0.9rem;
+    opacity: 0.9;
 }

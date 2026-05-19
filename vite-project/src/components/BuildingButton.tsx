@@ -6,6 +6,15 @@ type BuildingButtonProps = {
     selectedBuildingId?: number
 }
 
+function formatAddress(address: string): string {
+    let result = address.replace(/^ул\.\s*/, '');
+    const commaIndex = result.indexOf(', г. ');
+    if (commaIndex !== -1) {
+        result = result.substring(0, commaIndex);
+    }
+    return result;
+}
+
 export default function BuildingButton({ onChangeBuilding, selectedBuildingId }: BuildingButtonProps) {
     const { buildings, isLoading, error } = useBuildingList()
 
@@ -19,7 +28,7 @@ export default function BuildingButton({ onChangeBuilding, selectedBuildingId }:
                     key={building.id}
                     onClick={() => onChangeBuilding(building.id)}
                 >
-                    {building.name}
+                    {formatAddress(building.address)}
                 </button>
             ))}
         </div>
