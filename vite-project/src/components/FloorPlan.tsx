@@ -75,7 +75,7 @@ export default function FloorPlan({ buildingId, floor }: FloorPlanProps): JSX.El
             <TransformComponent 
                 wrapperStyle={{ 
                     width: '100%', 
-                    height: '80vh',
+                    height: '100vh',
 
                 }}
             >
