@@ -28,16 +28,6 @@ export default function FloorPlan({ buildingId, floor }: FloorPlanProps): JSX.El
         }
     }, [buildingId, floor])
 
-    useEffect(() => {
-        if (SvgFloor && transformRef.current) {
-
-            const raf = requestAnimationFrame(() => {
-                transformRef.current?.centerView(0.5, 300)
-            })
-            return () => cancelAnimationFrame(raf)
-        }
-    }, [SvgFloor])
-
     const onCabinetClick = (e: React.MouseEvent<HTMLDivElement>) => {
         const target = e.target as HTMLElement
 
@@ -67,16 +57,18 @@ export default function FloorPlan({ buildingId, floor }: FloorPlanProps): JSX.El
         <TransformWrapper
             ref={transformRef}
             key={`${buildingId}-${floor}`}
-            minScale={0.2}
-            maxScale={5}
-            limitToBounds={true}
-
+            minScale={0.5}
+            maxScale={3}
+            limitToBounds={false}
+            wheel={{ step: 0.001, }}
         >
             <TransformComponent 
                 wrapperStyle={{ 
                     width: '100%', 
                     height: '100vh',
-
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    display: 'flex'
                 }}
             >
                 <div onClick={onCabinetClick}>
