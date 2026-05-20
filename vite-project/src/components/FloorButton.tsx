@@ -35,3 +35,5 @@ export default function FloorButton({ buildingId, onChangeFloor }: FloorButtonPr
         </div>
     )
 }
+
+export { buildingMaxFloors };
